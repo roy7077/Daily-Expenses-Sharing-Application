@@ -160,7 +160,7 @@ Database Structure
 ------------------
 
 Below is the structure of the MongoDB database used in this project:
-<img width="959" alt="Screenshot 2024-10-20 at 12 48 58 PM" src="https://github.com/user-attachments/assets/1163e744-0dfc-4289-b0e4-c4c4ba36463a">
+<img width="755" alt="Screenshot 2024-10-21 at 4 05 56 AM" src="https://github.com/user-attachments/assets/ab1bdd04-a6e4-4413-a907-c2af44c614e0">
 
 
 Contributors
