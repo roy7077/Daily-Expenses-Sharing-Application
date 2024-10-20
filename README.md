@@ -1,177 +1,115 @@
-Group Expense Tracker
-=====================
+Daily Expenses Sharing Application
+==================================
+
+A MERN stack application designed for tracking shared expenses among users in various groups. This application allows users to easily manage their expenses, view individual contributions, and download balance sheets.
+
+Base URL
+--------
+
+The deployed backend can be accessed at:[**https://daily-expenses-sharing-application.onrender.com/**](https://daily-expenses-sharing-application.onrender.com/)
 
 Table of Contents
 -----------------
 
-*   [Project Overview](#project-overview)
-    
 *   [Features](#features)
-    
-*   [Technologies Used](#technologies-used)
-    
-*   [Installation](#installation)
-    
-*   [Usage](#usage)
     
 *   [API Endpoints](#api-endpoints)
     
 *   [Postman Collection](#postman-collection)
     
-*   [Database Structure](#database-structure)
+*   [Installation](#installation)
     
-*   [Contributors](#contributors)
+*   [Usage](#usage)
+    
+*   [Technologies Used](#technologies-used)
+    
+*   [Contributing](#contributing)
     
 *   [License](#license)
     
 
-Project Overview
-----------------
-
-The **Group Expense Tracker** is a web application designed to help users manage and track expenses within groups. Users can create groups, add expenses, and split costs among participants, making it easier to keep track of shared expenses. This project aims to streamline the process of managing group finances, providing a clear overview of who owes what.
-
 Features
 --------
 
-*   **User Authentication**: Users can register and log in to their accounts.
-    
-*   **Group Management**: Create and manage groups for tracking expenses.
-    
-*   **Expense Tracking**: Add expenses with descriptions, amounts, and split them among group members.
-    
-*   **Contribution Tracking**: View each participant's contribution to the expenses.
-    
-*   **Balance Sheet Download**: Generate and download a balance sheet for each group, showing individual contributions and total expenses.
-    
-*   **Responsive Design**: Mobile-friendly interface for easy access on any device.
-    
-
-Technologies Used
------------------
-
-*   **Frontend**: HTML, CSS, JavaScript, React.js
-    
-*   **Backend**: Node.js, Express.js
-    
-*   **Database**: MongoDB (using Mongoose for object modeling)
-    
-*   **Authentication**: JWT (JSON Web Tokens) for secure user authentication
-    
-*   **CSV Generation**: json2csv package for exporting data in CSV format
-    
-*   **Deployment**: MongoDB Atlas for cloud database hosting
-    
-
-Installation
-------------
-
-1.  bashCopy codegit clone https://github.com/roy7077/Daily-Expenses-Sharing-Application.git
-    
-2.  bashCopy codecd group-expense-tracker
-    
-3.  bashCopy code npm install
-    
-4.  plaintextCopy codeDB\_URL="your\_mongodb\_connection\_string"
-    
-5.  bashCopy npm start
-    
-
-Usage
------
-
-*   Open your browser and go to http://localhost:8080 to access the application.
-    
-*   Register for a new account or log in to an existing account.
-    
-*   Create a new group and start adding expenses.
-    
-*   Use the download functionality to generate a balance sheet for the group.
+*   User authentication (Signup and Login)
+*   Manage user profiles
+*   Create and manage groups
+*   Add and manage expenses
+*   Download balance sheets for groups
+*   View individual contributions and expenses
     
 
 API Endpoints
 -------------
 
-### Auth
+### Authentication
 
-*   **Signup**
+*   **POST** /auth/signup - Create a new user
+*   **POST** /auth/login - User login
     
-    *   POST /api/auth/signup
-        
-*   **Login**
-    
-    *   POST /api/auth/login
-        
 
 ### User
 
-*   **Get User by ID**
+*   **GET** /user/:id - Get user by ID
+*   **GET** /user - Get all users
     
-    *   GET /api/users/:id
-        
-*   **Get All Users**
-    
-    *   GET /api/users
-        
 
 ### Groups
 
-*   **Create New Group**
+*   **POST** /groups - Create a new group
+*   **POST** /groups/:id/add-member - Add a new member to a group
+*   **GET** /groups - Get all groups
+*   **GET** /groups/:id - Get a group by ID
     
-    *   POST /api/groups
-        
-*   **Add New Member to Group**
-    
-    *   POST /api/groups/:id/members
-        
-*   **Get All Groups**
-    
-    *   GET /api/groups
-        
-*   **Get Group by ID**
-    
-    *   GET /api/groups/:id
-        
 
 ### Expenses
 
-*   **Add New Expense**
+*   **POST** /expenses - Add new expense
+*   **GET** /expenses/:id - Get individual user's expenses
+*   **GET** /expenses/group/:id - Get all expenses for a group
+*   **GET** /expenses/download/:id - Download balance sheet for a group
     
-    *   POST /api/expenses
-        
-*   **Get Individual User's Expenses**
-    
-    *   GET /api/expenses/user/:id
-        
-*   **Get Group Expenses**
-    
-    *   GET /api/groups/:id/expenses
-        
-*   **Download Balance Sheet**
-    
-    *   GET /api/groups/:id/balance-sheet
-        
 
 Postman Collection
 ------------------
 
-You can explore and test the API endpoints using the Postman collection provided here: [Postman Collection](https://www.postman.com/roy707/workspace/shop-cart/collection/32632569-9340bb09-5e02-46e5-b9ff-8028ffe53760?action=share&creator=32632569).
+You can explore the API endpoints using the Postman collection:[**Postman Collection**](https://www.postman.com/roy707/workspace/shop-cart/collection/32632569-9340bb09-5e02-46e5-b9ff-8028ffe53760?action=share&creator=32632569)
 
-Database Structure
+Data Base
 ------------------
-
-Below is the structure of the MongoDB database used in this project:
-<img width="755" alt="Screenshot 2024-10-21 at 4 05 56 AM" src="https://github.com/user-attachments/assets/ab1bdd04-a6e4-4413-a907-c2af44c614e0">
+<img width="755" alt="Screenshot 2024-10-21 at 4 05 56 AM" src="https://github.com/user-attachments/assets/a9157b95-6717-4ca6-a43d-33ce0201984a">
 
 
-Contributors
+Installation
 ------------
 
-*   [Your Name](https://github.com/roy7077)
+1.  git clone https://github.com/roy7077/Daily-Expenses-Sharing-Application.git
+2.  cd server
+3.  npm install
+4.  Set up environment variables:Create a .env file and add your MongoDB connection string and other required variables.
+5.  npm start
     
-*   [Other Contributors](https://github.com/other_contributors)
+
+Usage
+-----
+
+*   Access the API using the base URL mentioned above.
+*   Use the provided Postman collection to test the endpoints.
     
+
+Technologies Used
+-----------------
+ 
+*   **Backend:** Node.js, Express.js, MongoDB
+*   **Deployment:** Render.com
+    
+
+Contributing
+------------
+
+Contributions are welcome! Feel free to submit a pull request or open an issue.
 
 License
 -------
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License.
